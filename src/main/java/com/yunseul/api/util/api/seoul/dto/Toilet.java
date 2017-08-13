@@ -5,24 +5,24 @@ import lombok.Data;
 
 @Data
 public class Toilet {
-    @JsonProperty("OBJECTID")
-    private String tid;
-    @JsonProperty("GU_NM")
-    private String gu;
-    @JsonProperty("HNR_NAM")
-    private String dong;
-    @JsonProperty("MTC_AT")
-    private String mtc_at;
-    @JsonProperty("MASTERNO")
-    private String masterno;
-    @JsonProperty("SLAVENO")
-    private String slaveno;
-    @JsonProperty("NEADRES_NM")
-    private String neadres_nm;
-    @JsonProperty("CREAT_DE")
-    private String creat_de;
-    @JsonProperty("X")
-    private Double x;
-    @JsonProperty("Y")
-    private Double y;
+    @JsonProperty("POI_ID")
+    private String poiId;
+    @JsonProperty("FNAME")
+    private String fName;
+    @JsonProperty("ANAME")
+    private String aName;
+    @JsonProperty("CNAME")
+    private String cName;
+    @JsonProperty("CENTER_X1")
+    private String centerX;
+    @JsonProperty("CENTER_Y1")
+    private String cetnerY;
+    @JsonProperty("X_WGS84")
+    private Double wgsX;
+    @JsonProperty("Y_WGS84")
+    private Double wgsY;
+    @JsonProperty("INSERTDATE")
+    private String insertDate;
+    @JsonProperty("UPDATEDATE")
+    private String updateDate;
 }

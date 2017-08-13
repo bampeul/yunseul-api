@@ -45,6 +45,6 @@ public class GuideServiceImpl implements GuideService {
 
     @Override
     public List<Toilet> readToilets() {
-        return seoulApiClient.geoInfoPublicToilet();
+        return seoulApiClient.searchPublicToiletPOIService();
     }
 }
