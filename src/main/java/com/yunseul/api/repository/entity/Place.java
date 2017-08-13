@@ -12,10 +12,10 @@ public class Place {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
     private Long id;
-    private Long pid;
+    private String pid;
     private String name;
     private String description;
-    // Todo Â÷ÈÄ enum À¸·Î.. Building, Area µîµî??
+    // Todo ï¿½ï¿½ï¿½ï¿½ enum ï¿½ï¿½ï¿½ï¿½.. Building, Area ï¿½ï¿½ï¿½??
     private String type;
     private Double x;
     private Double y;

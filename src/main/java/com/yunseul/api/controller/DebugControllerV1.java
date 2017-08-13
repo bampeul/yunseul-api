@@ -3,11 +3,8 @@ package com.yunseul.api.controller;
 import com.yunseul.api.service.GuideService;
 import com.yunseul.api.service.dto.GuideDTO;
 import com.yunseul.api.util.api.seoul.dto.AirQuality;
-import com.yunseul.api.util.api.seoul.dto.Toilet;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -18,13 +15,14 @@ public class DebugControllerV1 {
     @Autowired
     private GuideService guideService;
 
-    public String test() {
-        return "test";
+    @RequestMapping(value = "places", method = RequestMethod.GET)
+    public List<GuideDTO> placesTest() {
+        return guideService.readPlaces();
     }
 
-    @RequestMapping(value = "places", method = RequestMethod.GET)
-    public List<GuideDTO> placeTest() {
-        return guideService.readGuides();
+    @RequestMapping(value = "places/{type}", method = RequestMethod.GET)
+    public List<GuideDTO> placesTypeTest(@PathVariable String type) {
+        return guideService.readPlaces(type);
     }
 
     @RequestMapping(value = "airQuality", method = RequestMethod.GET)
@@ -32,8 +30,8 @@ public class DebugControllerV1 {
         return guideService.readTodayAirQuality();
     }
 
-    @RequestMapping(value = "toilet", method = RequestMethod.GET)
-    public List<Toilet> toiletTest() {
-        return guideService.readToilets();
+    @RequestMapping(value = "toilets", method = RequestMethod.GET)
+    public List<GuideDTO> toiletTest(@RequestParam Double slLat, @RequestParam Double slLng, @RequestParam Double distance) {
+        return guideService.readNearestToilets(slLat, slLng, distance);
     }
 }

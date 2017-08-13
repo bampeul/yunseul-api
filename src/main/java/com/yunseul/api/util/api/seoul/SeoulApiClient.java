@@ -3,16 +3,12 @@ package com.yunseul.api.util.api.seoul;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.yunseul.api.util.api.seoul.dto.AirQuality;
-import com.yunseul.api.util.api.seoul.dto.Toilet;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.client.RestTemplate;
 
 import java.io.IOException;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.*;
-import java.util.stream.Collectors;
-import java.util.stream.StreamSupport;
 
 public class SeoulApiClient {
 
@@ -41,8 +37,8 @@ public class SeoulApiClient {
 
         return new AirQuality();
     }
-
-    public List<Toilet> searchPublicToiletPOIService() {
+/*
+    public List<Toilet> searchPublicToiletPOIService(Double slLat, Double slLng, Double distance) {
         List<Toilet> toilets = new ArrayList();
         for (int i = 1, j = 1000; j <= 5000; i += 1000, j += 1000) {
             try {
@@ -56,11 +52,13 @@ public class SeoulApiClient {
 
                 toilets.addAll(StreamSupport.stream(jsonNodeSpliterator, false)
                                             .map(x -> objectMapper.convertValue(x, Toilet.class))
+//                                            .filter(x -> distance <= (6371 * Math.acos(Math.cos(Math.toRadians(x.getWgsX())) * Math.cos(Math.toRadians(slLat)) * Math.cos(Math.toRadians(slLng) - Math.toRadians(x.getWgsY())) + Math.sin(Math.toRadians(x.getWgsX())) * Math.sin(Math.toRadians(slLat)))))
                                             .collect(Collectors.toList()));
             } catch (IOException e) {
                 e.printStackTrace();
             }
         }
+        toilets.forEach(x -> System.out.println("INSERT INTO yunseul_place_tb (pid, name, description, type, x, y) VALUES ('" + x.getPoiId() + "', '" + x.getFName() + "', '" + x.getAName() + "', 'P0003', " + x.getWgsX() + ", " + x.getWgsY() + ")"));
         return toilets;
-    }
+    }*/
 }

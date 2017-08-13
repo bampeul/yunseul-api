@@ -6,7 +6,7 @@ import lombok.Data;
 @Builder
 @Data
 public class GuideDTO {
-    private Long pid;
+    private String pid;
     private String name;
     private String description;
     private String type;
