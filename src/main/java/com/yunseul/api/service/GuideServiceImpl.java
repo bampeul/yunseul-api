@@ -28,6 +28,7 @@ public class GuideServiceImpl implements GuideService {
                                               .type(x.getType())
                                               .x(x.getX())
                                               .y(x.getY())
+                                              .imageUrl(x.getImageUrl())
                                               .build())
                             .collect(Collectors.toList());
     }
@@ -42,6 +43,7 @@ public class GuideServiceImpl implements GuideService {
                                                 .type(x.getType())
                                                 .x(x.getX())
                                                 .y(x.getY())
+                                                .imageUrl(x.getImageUrl())
                                                 .build())
                               .collect(Collectors.toList());
     }
@@ -70,6 +72,7 @@ public class GuideServiceImpl implements GuideService {
                                                 .type(x.getType())
                                                 .x(x.getX())
                                                 .y(x.getY())
+                                                .imageUrl(x.getImageUrl())
                                                 .build())
                               .collect(Collectors.toList());
     }

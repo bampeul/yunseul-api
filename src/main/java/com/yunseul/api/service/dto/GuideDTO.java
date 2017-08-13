@@ -12,4 +12,5 @@ public class GuideDTO {
     private String type;
     private Double x;
     private Double y;
+    private String imageUrl;
 }
