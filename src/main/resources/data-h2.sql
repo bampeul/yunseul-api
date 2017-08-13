@@ -26,3 +26,4 @@ INSERT INTO yunseul_place_tb (pid, name, description, type, x, y) VALUES (24, '�
 INSERT INTO yunseul_place_tb (pid, name, description, type, x, y) VALUES (25, '서울로 가게', '', 'P0002', 127.6498375, 35.2326263)
 INSERT INTO yunseul_place_tb (pid, name, description, type, x, y) VALUES (26, '안내소', '서울로 안내소', 'P0002', 127.6498375, 35.2326263)
 INSERT INTO yunseul_place_tb (pid, name, description, type, x, y) VALUES (27, '호기심화분(보여요)', '서울 대표 야경이 보여요', 'P0002', 127.6498375, 35.2326263)
+

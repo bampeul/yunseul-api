@@ -4,6 +4,7 @@ import com.yunseul.api.repository.PlaceRepository;
 import com.yunseul.api.service.dto.GuideDTO;
 import com.yunseul.api.util.api.seoul.SeoulApiClient;
 import com.yunseul.api.util.api.seoul.dto.AirQuality;
+import com.yunseul.api.util.api.seoul.dto.Toilet;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -40,5 +41,10 @@ public class GuideServiceImpl implements GuideService {
     @Override
     public AirQuality readTodayAirQuality() {
         return seoulApiClient.dailyAverageAirQuality();
+    }
+
+    @Override
+    public List<Toilet> readToilets() {
+        return seoulApiClient.geoInfoPublicToilet();
     }
 }

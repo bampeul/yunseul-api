@@ -3,6 +3,7 @@ package com.yunseul.api.controller;
 import com.yunseul.api.service.GuideService;
 import com.yunseul.api.service.dto.GuideDTO;
 import com.yunseul.api.util.api.seoul.dto.AirQuality;
+import com.yunseul.api.util.api.seoul.dto.Toilet;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -29,5 +30,10 @@ public class DebugControllerV1 {
     @RequestMapping(value = "airQuality", method = RequestMethod.GET)
     public AirQuality airQualityTest() {
         return guideService.readTodayAirQuality();
+    }
+
+    @RequestMapping(value = "toilet", method = RequestMethod.GET)
+    public List<Toilet> toiletTest() {
+        return guideService.readToilets();
     }
 }
