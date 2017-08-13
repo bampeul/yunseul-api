@@ -2,6 +2,8 @@ package com.yunseul.api.service;
 
 import com.yunseul.api.repository.PlaceRepository;
 import com.yunseul.api.service.dto.GuideDTO;
+import com.yunseul.api.util.api.seoul.SeoulApiClient;
+import com.yunseul.api.util.api.seoul.dto.AirQuality;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,6 +17,8 @@ import java.util.stream.StreamSupport;
 public class GuideServiceImpl implements GuideService {
     @Autowired
     private PlaceRepository placeRepository;
+    @Autowired
+    private SeoulApiClient seoulApiClient;
 
     @Override
     public List<GuideDTO> readGuides() {
@@ -31,5 +35,10 @@ public class GuideServiceImpl implements GuideService {
                                             .build()
                             )
                             .collect(Collectors.toList());
+    }
+
+    @Override
+    public AirQuality readTodayAirQuality() {
+        return seoulApiClient.dailyAverageAirQuality();
     }
 }
