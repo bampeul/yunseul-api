@@ -54,7 +54,15 @@ public class GuideServiceImpl implements GuideService {
     @Override
     public List<GuideDTO> readNearestToilets(Double slLat, Double slLng, Double distance) {
         return placeRepository.findByType("P0003").stream()
-                              .filter(x -> distance >= (6371 * Math.acos(Math.cos(Math.toRadians(x.getX())) * Math.cos(Math.toRadians(slLat)) * Math.cos(Math.toRadians(slLng) - Math.toRadians(x.getY())) + Math.sin(Math.toRadians(x.getX())) * Math.sin(Math.toRadians(slLat)))))
+                              .filter(x ->
+                                      distance >=
+                                              (6371 * Math.acos(Math.cos(
+                                                      Math.toRadians(x.getX()))
+                                                      * Math.cos(Math.toRadians(slLat))
+                                                      * Math.cos(Math.toRadians(slLng)
+                                                      - Math.toRadians(x.getY()))
+                                                      + Math.sin(Math.toRadians(x.getX()))
+                                                      * Math.sin(Math.toRadians(slLat)))))
                               .map(x -> GuideDTO.builder()
                                                 .pid(x.getPid())
                                                 .name(x.getName())

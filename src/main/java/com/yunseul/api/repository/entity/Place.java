@@ -15,7 +15,7 @@ public class Place {
     private String pid;
     private String name;
     private String description;
-    // Todo ���� enum ����.. Building, Area ���??
+    // Todo 차후 enum 으로 변경
     private String type;
     private Double x;
     private Double y;

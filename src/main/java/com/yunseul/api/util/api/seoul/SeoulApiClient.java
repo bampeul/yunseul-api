@@ -37,28 +37,4 @@ public class SeoulApiClient {
 
         return new AirQuality();
     }
-/*
-    public List<Toilet> searchPublicToiletPOIService(Double slLat, Double slLng, Double distance) {
-        List<Toilet> toilets = new ArrayList();
-        for (int i = 1, j = 1000; j <= 5000; i += 1000, j += 1000) {
-            try {
-                Spliterator<JsonNode> jsonNodeSpliterator = Spliterators.spliteratorUnknownSize(
-                        objectMapper.readTree(
-                                restTemplate.getForObject(SEOUL_API_DOMAIN + SLASH + "SearchPublicToiletPOIService" + SLASH + i + SLASH + j, String.class))
-                                    .get("SearchPublicToiletPOIService")
-                                    .get("row")
-                                    .elements()
-                        , Spliterator.ORDERED);
-
-                toilets.addAll(StreamSupport.stream(jsonNodeSpliterator, false)
-                                            .map(x -> objectMapper.convertValue(x, Toilet.class))
-//                                            .filter(x -> distance <= (6371 * Math.acos(Math.cos(Math.toRadians(x.getWgsX())) * Math.cos(Math.toRadians(slLat)) * Math.cos(Math.toRadians(slLng) - Math.toRadians(x.getWgsY())) + Math.sin(Math.toRadians(x.getWgsX())) * Math.sin(Math.toRadians(slLat)))))
-                                            .collect(Collectors.toList()));
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
-        toilets.forEach(x -> System.out.println("INSERT INTO yunseul_place_tb (pid, name, description, type, x, y) VALUES ('" + x.getPoiId() + "', '" + x.getFName() + "', '" + x.getAName() + "', 'P0003', " + x.getWgsX() + ", " + x.getWgsY() + ")"));
-        return toilets;
-    }*/
 }

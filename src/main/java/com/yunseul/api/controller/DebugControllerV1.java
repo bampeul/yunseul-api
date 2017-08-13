@@ -25,7 +25,7 @@ public class DebugControllerV1 {
         return guideService.readPlaces(type);
     }
 
-    @RequestMapping(value = "airQuality", method = RequestMethod.GET)
+    @RequestMapping(value = "air", method = RequestMethod.GET)
     public AirQuality airQualityTest() {
         return guideService.readTodayAirQuality();
     }
