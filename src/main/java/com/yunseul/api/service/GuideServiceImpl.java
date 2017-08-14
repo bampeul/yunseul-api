@@ -7,6 +7,7 @@ import com.yunseul.api.util.api.seoul.model.AirQuality;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
@@ -29,6 +30,8 @@ public class GuideServiceImpl implements GuideService {
                                               .x(x.getX())
                                               .y(x.getY())
                                               .imageUrl(x.getImageUrl())
+                                              .createdDate(x.getCreatedDate().format(DateTimeFormatter.ofPattern("yyyy-MM-dd hh:mm:ss")))
+                                              .updatedDate(x.getUpdatedDate().format(DateTimeFormatter.ofPattern("yyyy-MM-dd hh:mm:ss")))
                                               .build())
                             .collect(Collectors.toList());
     }
@@ -44,6 +47,8 @@ public class GuideServiceImpl implements GuideService {
                                                 .x(x.getX())
                                                 .y(x.getY())
                                                 .imageUrl(x.getImageUrl())
+                                                .createdDate(x.getCreatedDate().format(DateTimeFormatter.ofPattern("yyyy-MM-dd hh:mm:ss")))
+                                                .updatedDate(x.getUpdatedDate().format(DateTimeFormatter.ofPattern("yyyy-MM-dd hh:mm:ss")))
                                                 .build())
                               .collect(Collectors.toList());
     }
@@ -73,6 +78,8 @@ public class GuideServiceImpl implements GuideService {
                                                 .x(x.getX())
                                                 .y(x.getY())
                                                 .imageUrl(x.getImageUrl())
+                                                .createdDate(x.getCreatedDate().format(DateTimeFormatter.ofPattern("yyyy-MM-dd hh:mm:ss")))
+                                                .updatedDate(x.getUpdatedDate().format(DateTimeFormatter.ofPattern("yyyy-MM-dd hh:mm:ss")))
                                                 .build())
                               .collect(Collectors.toList());
     }

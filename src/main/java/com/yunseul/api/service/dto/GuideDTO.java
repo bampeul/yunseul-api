@@ -13,4 +13,6 @@ public class GuideDTO {
     private Double x;
     private Double y;
     private String imageUrl;
+    private String createdDate;
+    private String updatedDate;
 }
