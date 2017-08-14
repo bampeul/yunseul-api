@@ -2,7 +2,7 @@ package com.yunseul.api.util.api.seoul;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.yunseul.api.util.api.seoul.dto.AirQuality;
+import com.yunseul.api.util.api.seoul.model.AirQuality;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.client.RestTemplate;
 

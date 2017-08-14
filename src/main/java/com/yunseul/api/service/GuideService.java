@@ -1,7 +1,7 @@
 package com.yunseul.api.service;
 
 import com.yunseul.api.service.dto.GuideDTO;
-import com.yunseul.api.util.api.seoul.dto.AirQuality;
+import com.yunseul.api.util.api.seoul.model.AirQuality;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package com.yunseul.api.util.api.seoul.dto;
+package com.yunseul.api.util.api.seoul.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;

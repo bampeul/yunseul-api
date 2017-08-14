@@ -3,7 +3,7 @@ package com.yunseul.api.service;
 import com.yunseul.api.repository.PlaceRepository;
 import com.yunseul.api.service.dto.GuideDTO;
 import com.yunseul.api.util.api.seoul.SeoulApiClient;
-import com.yunseul.api.util.api.seoul.dto.AirQuality;
+import com.yunseul.api.util.api.seoul.model.AirQuality;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
