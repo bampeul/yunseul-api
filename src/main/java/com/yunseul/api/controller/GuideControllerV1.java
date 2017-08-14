@@ -10,29 +10,29 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/guide")
+@RequestMapping("/api/v1/guide")
 public class GuideControllerV1 {
 
     @Autowired
     private GuideService guideService;
 
     @RequestMapping(value = "/places", method = RequestMethod.GET)
-    public ApiResponse<List<GuideDTO>> placesTest() {
+    public ApiResponse<List<GuideDTO>> readPlaces() {
         return new ApiResponse(guideService.readPlaces());
     }
 
     @RequestMapping(value = "/places/{type}", method = RequestMethod.GET)
-    public ApiResponse<List<GuideDTO>> placesTypeTest(@PathVariable String type) {
+    public ApiResponse<List<GuideDTO>> readPlacesByType(@PathVariable String type) {
         return new ApiResponse(guideService.readPlaces(type));
     }
 
     @RequestMapping(value = "/air", method = RequestMethod.GET)
-    public ApiResponse<AirQuality> airQualityTest() {
+    public ApiResponse<AirQuality> readAirQuality() {
         return new ApiResponse(guideService.readTodayAirQuality());
     }
 
     @RequestMapping(value = "/toilets", method = RequestMethod.GET)
-    public ApiResponse<List<GuideDTO>> toiletTest(@RequestParam Double slLat, @RequestParam Double slLng, @RequestParam Double distance) {
+    public ApiResponse<List<GuideDTO>> readToilets(@RequestParam Double slLat, @RequestParam Double slLng, @RequestParam Double distance) {
         return new ApiResponse(guideService.readNearestToilets(slLat, slLng, distance));
     }
 }

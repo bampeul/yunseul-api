@@ -1,4 +1,4 @@
-package com.yunseul.api.repository;
+package com.yunseul.api.repository.converter;
 
 import javax.persistence.AttributeConverter;
 import javax.persistence.Converter;
