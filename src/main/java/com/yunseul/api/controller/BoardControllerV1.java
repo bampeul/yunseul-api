@@ -45,12 +45,12 @@ public class BoardControllerV1 {
         return new ApiResponse<>(boardService.readComment(cid));
     }
 
-    @RequestMapping(value = "comments/{aid}", method = RequestMethod.GET)
+    @RequestMapping(value = "/comments/{aid}", method = RequestMethod.GET)
     public ApiResponse<List<BoardDTO>> readComments(@PathVariable String aid) {
         return new ApiResponse<>(boardService.readComments(aid));
     }
 
-    @RequestMapping(value = "comments/{cid}", method = RequestMethod.POST)
+    @RequestMapping(value = "/comments/{cid}", method = RequestMethod.POST)
     public ApiResponse<BoardDTO> deleteComment(@PathVariable String cid) {
         return new ApiResponse<>(boardService.deleteComment(cid));
     }
